@@ -33,7 +33,7 @@ public class BlackjackHand extends Hand {
 
 	public boolean isBlackjack() {
 		int value = 0;
-		for (Card card : cards) {
+		for (Card card : hand) {
 			value += card.getValue();
 		}
 		if (value == 21) {
@@ -44,22 +44,31 @@ public class BlackjackHand extends Hand {
 	}
 
 	public boolean isBust() {
-		// if hand value is > 21
-		return false;
+		int handValue = getHandValue();
+		if (handValue > 21) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	public void printPlayerHand() {
+	public void printHand() {
 		for (Card card : hand) {
 			System.out.println("\t" + card);
 		}
 	}
 
-	public void printDealerFirstCard() {
+	public void printFirstCard() {
 		System.out.println(hand.get(0));
 	}
 
-	public void printDealerSecondCard() {
+	public void printSecondCard() {
 		System.out.println(hand.get(1));
+	}
+
+	public void printLastCard() {
+		int lastCard = hand.size() - 1;
+		System.out.println(hand.get(lastCard));
 	}
 
 }
