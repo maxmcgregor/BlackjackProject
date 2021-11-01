@@ -7,9 +7,9 @@ import com.skilldistillery.cards.Deck;
 
 public class BlackjackDealer {
 
-	public BlackjackHand playerHand = new BlackjackHand();
-	public BlackjackHand dealerHand = new BlackjackHand();
-	public Deck deck;
+	private BlackjackHand playerHand = new BlackjackHand();
+	private BlackjackHand dealerHand = new BlackjackHand();
+	private Deck deck;
 	Scanner sc = new Scanner(System.in);
 
 	public BlackjackDealer() {
